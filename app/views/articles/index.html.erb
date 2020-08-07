@@ -1,0 +1,13 @@
+
+<h1>Listing Articles</h1>
+
+<ul>
+  <% @blogposts.each do |article| %>
+    <li>
+      <%# <td> %>
+        <%= link_to article, article_path(article) %>
+      <%# </td> %>
+    </li>
+  <% end %>
+</ul>
+
