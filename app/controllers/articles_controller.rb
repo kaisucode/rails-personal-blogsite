@@ -1,4 +1,17 @@
 class ArticlesController < ApplicationController
+
+  # articles is the name of the controller
+  # Article is the name of the model
+
+  http_basic_authenticate_with name: "kevin", password: "123", 
+    except: [:index, :show]
+
+  class <<  self
+    def markdown
+      markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+    end
+  end
+
   def index
     @articles = Article.all
   end
@@ -38,6 +51,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @parsed_text = self.class.markdown.render(@article.text)
   end
 
   private
