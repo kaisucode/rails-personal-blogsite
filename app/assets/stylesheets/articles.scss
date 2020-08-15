@@ -1,3 +1,90 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+$blue: #3F4179;
+$gold: #B7938A;
+$pink: #D3B2B1;
+
+// $background: #3F4179;
+// $background: #0D141D;
+$background: #212C38;
+
+// $sidebar: $blue;
+// $sidebar: $pink;
+$sidebar: pink;
+$sidebar: $blue;
+
+
+*{
+	color: $gold;
+	padding: 0;
+	margin: 0;
+	font-family: 'Fira Code', monospace;
+
+	body{
+		background-color: $background;
+	}
+	.container{
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		.spacer{
+			width: 25%;
+			height: 100vh;
+		}
+		.blog{
+			background-color: $background;
+			width: 75%;
+			font-size: 1.2em;
+			.content{
+				margin: 0 auto;
+				padding: 8rem 0;
+			}
+		}
+	}
+
+	.sticky-sidebar{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 25%;
+		height: 100vh;
+		background-color: $sidebar;
+		text-align: center;
+		.title{
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			text-align: center;
+			padding: 5rem 0;
+			font-size: 1.8em;
+			font-family: 'Caveat', cursive;
+			h1{
+				// font-family: "Handlee", cursive;
+				// font-family: 'Dancing Script', cursive;
+				// font-family: 'Shadows Into Light', cursive;
+				font-family: 'Caveat', cursive;
+				font-size: 2.2em;
+			}
+		}
+	}
+}
+
+#show{
+	text-align: center;
+}
+
+#admin-panel{
+	th, td{
+		padding: 0 2rem;
+		line-height: 2em;
+	}
+}
+

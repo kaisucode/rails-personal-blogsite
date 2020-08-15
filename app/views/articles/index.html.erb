@@ -1,23 +1,33 @@
 
-<h1>Listing Articles</h1>
+<div class="container">
+  <div class="spacer"></div>
+  <div class="blog">
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-    <th></th>
-  </tr>
+    <table id="admin-panel" class="content">
+      <tr>
+        <th>Title</th>
+        <th>Text</th>
+        <th></th>
+      </tr>
 
-  <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.title %></td>
-      <td><%= article.text %></td>
-      <td><%= link_to 'Show', article_path(article) %></td>
-      <td><%= link_to 'Edit', edit_article_path(article) %></td>
-      <td><%= link_to 'Delete', article_path(article), 
-        method: :delete, 
-        data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-  <% end %>
-</table>
+      <% @articles.each do |article| %>
+        <tr>
+          <td><%= article.title %></td>
+          <td><%= article.text[0..50].gsub(/\s\w+\s*$/, '...') %></td>
+          <td><%= link_to 'Show', article_path(article) %></td>
+          <td><%= link_to 'Edit', edit_article_path(article) %></td>
+          <td><%= link_to 'Delete', article_path(article), 
+            method: :delete, 
+            data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+      <tr>
+        <td> <%= link_to 'New article', new_article_path %> </td>
+      </tr>
+    </table>
+
+  </div>
+</div>
+
+<%= render 'sidebar' %>
 
