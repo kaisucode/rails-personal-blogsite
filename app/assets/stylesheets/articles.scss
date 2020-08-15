@@ -12,16 +12,10 @@ $cyan: #00ffff;
 $blue: #3F4179;
 $gold: #B7938A;
 $pink: #D3B2B1;
+$sea-green: #212C38;
 
-// $background: #3F4179;
-// $background: #0D141D;
-$background: #212C38;
-
-// $sidebar: $blue;
-// $sidebar: $pink;
-$sidebar: pink;
+$background: $sea-green;
 $sidebar: $blue;
-
 
 *{
 	color: $gold;
@@ -44,15 +38,16 @@ $sidebar: $blue;
 			background-color: $background;
 			width: 75%;
 			font-size: 1.2em;
-			.display-panel{
-				th, td{
-					padding: 0 2rem;
-					line-height: 2em;
-				}
-			}
+
 			.content{
 				margin: 0 auto;
-				padding: 8rem 0;
+				padding: 7rem 0;
+				text-align: left;
+				width: 70%;
+				p{
+					margin: 1rem 0;
+					font-size: 1.6em;
+				}
 			}
 		}
 	}
@@ -87,55 +82,123 @@ $sidebar: $blue;
 			top: 2rem;
 			width: 100%;
 			a{
-				text-decoration: none;
 				// background-color: $gold;
 				// color: $blue;
 				// border-radius: 0.2rem;
+				font-family: 'Caveat', cursive;
+				font-size: 1.4em;
 				padding: 0 1rem;
 				margin: 1rem;
 				line-height: 2em;
-
 				&:hover{
-					text-decoration: line-through;
+					color: $cyan;
 				}
 			}
 		}
 	}
 }
 
-#show{
-	text-align: center;
-	text-align: left;
-	width: 70%;
-
-	p{
-		margin: 1rem 0;
-		font-size: 1.6em;
-	}
-	.title{
-		color: $cyan;
-	}
-	.text p{
-		// background-color: #fff;
-		min-height: 50vh;
+#main{
+	.entry{
+		margin: 2rem auto;
+		a{
+			text-decoration: none;
+			.title{
+				font-size: 2.4em;
+				color: $cyan;
+			}
+			&:hover{
+				.title{
+					text-decoration: underline;
+				}
+			}
+		}
+		&:first-of-type { 
+			margin-top: 0 !important;
+		}
+		&:last-of-type { 
+			margin-top: 0 !important;
+		}
 	}
 }
 
-#new{
-	text-align: center;
-	text-align: left;
-	width: 70%;
-
-	p{
-		margin: 1rem 0;
-		font-size: 1.6em;
+.display-panel{
+	th, td{
+		padding: 0 2rem;
+		line-height: 2em;
 	}
+	a{
+		text-decoration: none;
+		&:hover{
+			text-decoration: underline;
+			color: $cyan;
+		}
+	}
+}
+
+
+#show{
 	.title{
 		color: $cyan;
+		// font-size: 2.4em;
+
+		font-size: 3.6em;
+		font-family: 'Caveat', cursive;
 	}
 	.text p{
-		// background-color: #fff;
-		min-height: 50vh;
+		min-height: 30vh;
+		// font-size: 1em;
+
+		font-size: 1.8em;
+		font-family: 'Caveat', cursive;
 	}
+}
+
+#form{
+	p{
+		display: flex;
+	}
+	p label{
+		width: 4rem;
+		margin: 0 1rem;
+		font-size: 0.6em;
+		padding: 0.8rem 1rem;
+		text-align: right;
+	}
+	textarea{
+		min-height: 30vh;
+	}
+	input[type=submit]{
+		padding: 0.4rem 1rem;
+		border: none;
+		border-radius: 0.4rem;
+		background-color: $blue;
+		color: $gold;
+
+		&:hover{
+			background-color: $gold;
+			color: $blue;
+			cursor: pointer;
+		}
+	}
+
+	p input[type=text], textarea {
+		background-color: transparent;
+		border: 0.1em solid $gold;
+		border-radius: 0.4rem;
+		font-size: 0.6em;
+		width: 70%;
+		padding: 0.8rem 1.4rem;
+		&:focus{
+			outline: none;
+		}
+	}
+}
+
+h1{
+	font-family: 'Caveat', cursive;
+	font-size: 3em;
+	margin-top: 0;
+	margin-bottom: 2rem !important;
 }
 

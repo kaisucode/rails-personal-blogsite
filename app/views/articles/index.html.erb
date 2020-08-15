@@ -3,21 +3,19 @@
   <div class="spacer"></div>
   <div class="blog">
 
-    <table class="display-panel content">
-      <tr>
-        <th>Title</th>
-        <th>Text</th>
-        <th></th>
-      </tr>
+    <div id="main" class="display-panel content">
 
       <% @articles.each do |article| %>
-        <tr>
-          <td><%= article.title %></td>
-          <td><%= article.text[0..50].gsub(/\s\w+\s*$/, '...') %></td>
-          <td><%= link_to 'Show', article_path(article) %></td>
-        </tr>
+
+        <div class="entry">
+          <%= link_to article_path(article) do %>
+            <div class="title"> <%= article.title %> </div>
+          <% end %>
+          <div> <%= article.text[0..50].gsub(/\s\w+\s*$/, '...') %> </div>
+        </div>
+
       <% end %>
-    </table>
+    </div>
 
   </div>
 </div>
