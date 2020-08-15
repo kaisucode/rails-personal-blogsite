@@ -8,6 +8,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 
+$cyan: #00ffff;
 $blue: #3F4179;
 $gold: #B7938A;
 $pink: #D3B2B1;
@@ -43,6 +44,12 @@ $sidebar: $blue;
 			background-color: $background;
 			width: 75%;
 			font-size: 1.2em;
+			.display-panel{
+				th, td{
+					padding: 0 2rem;
+					line-height: 2em;
+				}
+			}
 			.content{
 				margin: 0 auto;
 				padding: 8rem 0;
@@ -74,17 +81,61 @@ $sidebar: $blue;
 				font-size: 2.2em;
 			}
 		}
+
+		.links{
+			position: absolute;
+			top: 2rem;
+			width: 100%;
+			a{
+				text-decoration: none;
+				// background-color: $gold;
+				// color: $blue;
+				// border-radius: 0.2rem;
+				padding: 0 1rem;
+				margin: 1rem;
+				line-height: 2em;
+
+				&:hover{
+					text-decoration: line-through;
+				}
+			}
+		}
 	}
 }
 
 #show{
 	text-align: center;
+	text-align: left;
+	width: 70%;
+
+	p{
+		margin: 1rem 0;
+		font-size: 1.6em;
+	}
+	.title{
+		color: $cyan;
+	}
+	.text p{
+		// background-color: #fff;
+		min-height: 50vh;
+	}
 }
 
-#admin-panel{
-	th, td{
-		padding: 0 2rem;
-		line-height: 2em;
+#new{
+	text-align: center;
+	text-align: left;
+	width: 70%;
+
+	p{
+		margin: 1rem 0;
+		font-size: 1.6em;
+	}
+	.title{
+		color: $cyan;
+	}
+	.text p{
+		// background-color: #fff;
+		min-height: 50vh;
 	}
 }
 

@@ -4,14 +4,10 @@
   <div class="blog">
 
     <div id="show" class="content">
-      <p>
-        Title: <%= @article.title %>
-      </p>
-      <p>
-        Text:
-        <%= render inline: @parsed_text %>
-      </p>
-      <%= link_to 'edit', edit_article_path(@article) %> | 
+      <p class="title"> <%= @article.title %> </p>
+      <div class="text">
+        <%= render inline: @parsed_text %> 
+      </div>
       <%= link_to 'Back', articles_path %>
     </div>
 
