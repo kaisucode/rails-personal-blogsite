@@ -3,28 +3,29 @@
   <div class="spacer"></div>
   <div class="blog">
 
-    <div class="display-panel content">
+    <div id="admin" class="display-panel content">
       <h1>Admin Panel</h1>
       <table>
         <tr>
-          <th>Title</th>
-          <th>Text</th>
           <th></th>
+          <th>Title</th>
+          <!-- <th>Text</th> -->
+          <!-- <th></th> -->
         </tr>
 
         <% @articles.each do |article| %>
           <tr>
-            <td><%= article.title %></td>
-            <td><%= article.text[0..50].gsub(/\s\w+\s*$/, '...') %></td>
-            <td><%= link_to 'Show', article_path(article) %></td>
-            <td><%= link_to 'Edit', edit_article_path(article) %></td>
-            <td><%= link_to 'Delete', article_path(article), 
+            <td><%= link_to 'Edit', edit_article_path(article) %> | <%= link_to 'Delete', article_path(article), 
               method: :delete, 
               data: { confirm: 'Are you sure?' } %></td>
+            <td class="title">
+              <%= link_to article_path(article) do %><%= article.title %><% end %>
+            </td>
           </tr>
         <% end %>
         <tr>
-          <td> <%= link_to 'New article', new_article_path %> </td>
+          <td class="new-article"><%= link_to 'New article', new_article_path %></td>
+          <td></td>
         </tr>
       </table>
     </div>

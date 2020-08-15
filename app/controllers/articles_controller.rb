@@ -6,12 +6,6 @@ class ArticlesController < ApplicationController
   http_basic_authenticate_with name: "kevin", password: "123", 
     except: [:index, :show]
 
-  class <<  self
-    def markdown
-      markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
-    end
-  end
-
   def index
     @articles = Article.all
   end
@@ -50,12 +44,18 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
-    @parsed_text = self.class.markdown.render(@article.text)
+    @parsed_text = parseText(@article.text)
   end
 
   def admin
     @articles = Article.all
   end
+
+  def parseText(text)
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+    markdown.render(text)
+  end
+  helper_method :parseText
 
   private
   def article_params
