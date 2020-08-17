@@ -8,6 +8,7 @@
       <table>
         <tr>
           <th></th>
+          <th>Date</th>
           <th>Title</th>
         </tr>
 
@@ -16,11 +17,14 @@
           <td></td>
         </tr>
 
-        <% @articles.each do |article| %>
+        <% @articles.reverse_each do |article| %>
           <tr>
             <td><%= link_to 'Edit', edit_article_path(article) %> | <%= link_to 'Delete', article_path(article), 
               method: :delete, 
               data: { confirm: 'Are you sure?' } %></td>
+            <td class="date">
+              <%= article.publish_date %>
+            </td>
             <td class="title">
               <%= link_to article_path(article) do %><%= article.title %><% end %>
             </td>

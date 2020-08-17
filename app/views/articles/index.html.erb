@@ -5,12 +5,13 @@
 
     <div id="main" class="display-panel content">
 
-      <% @articles.each do |article| %>
+      <% @articles.reverse_each do |article| %>
 
         <div class="entry">
           <%= link_to article_path(article) do %>
             <div class="title"> <%= article.title %> </div>
           <% end %>
+          <div class="date"> <%= article.publish_date %> </div>
           <div> <%= render inline: parseText(article.text[0..200].gsub(/\s\w+\s*$/, '...')) %> </div>
         </div>
 

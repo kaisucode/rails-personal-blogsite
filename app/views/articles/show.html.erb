@@ -5,6 +5,7 @@
 
     <div id="show" class="content">
       <div class="title"> <%= @article.title %> </div>
+      <div class="date"> <%= @article.publish_date %> </div>
       <div class="text"> <%= render inline: @parsed_text %> </div>
       <%= link_to 'Back', :back %>
     </div>

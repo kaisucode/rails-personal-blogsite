@@ -83,12 +83,17 @@ $sidebar: $blue;
 #main{
 	.entry{
 		margin: 3rem auto;
+		// .date{
+		//   color: $cyan;
+		// }
 		p{
 			font-size: 1em;
 		}
 		a{
 			text-decoration: none;
 			.title{
+				display: inline-block;
+				// background-color: blue !important;
 				line-height: 1em;
 				color: $cyan;
 				font-size: 3.6em;
@@ -137,24 +142,27 @@ $sidebar: $blue;
 			width: 20%;
 		}
 		&:last-of-type {
-			padding-left: 6%;
+			padding-left: 2%;
 			a{
 				text-align: left !important;
 			}
 		}
 	}
 	th{
-		&:last-of-type{
-			text-align: center;
+		text-align: center;
 		border-bottom: 2px solid $gold;
+		&:first-of-type{
+			border: none;
 		}
 	}
 	.title{
-		width: 100%;
-		text-align: left !important;
+		// width: 100%;
+	}
+	.date{
+		text-align: center;
+		width: 14%;
 	}
 }
-
 
 #show{
 	padding: 6rem 0;
@@ -165,6 +173,11 @@ $sidebar: $blue;
 		line-height: 1.6em;
 		font-size: 3.6em;
 		font-family: 'Caveat', cursive;
+	}
+	.date {
+		font-size: 1em;
+		line-height: 1.6em;
+		// color: $cyan;
 	}
 	.text p{
 		min-height: 30vh;
@@ -201,16 +214,20 @@ $sidebar: $blue;
 		}
 	}
 
-	p input[type=text], textarea {
+	p input[type=text], input[type=date], textarea {
 		background-color: transparent;
 		border: 0.1em solid $gold;
 		border-radius: 0.4rem;
 		font-size: 0.6em;
 		width: 70%;
 		padding: 0.8rem 1.4rem;
+    color: $gold;
 		&:focus{
 			outline: none;
 		}
+	}
+	::-webkit-calendar-picker-indicator {
+		background-color: $gold;
 	}
 }
 
