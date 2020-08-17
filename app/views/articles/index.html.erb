@@ -11,7 +11,7 @@
           <%= link_to article_path(article) do %>
             <div class="title"> <%= article.title %> </div>
           <% end %>
-          <div> <%= render inline: parseText(article.text[0..50].gsub(/\s\w+\s*$/, '...')) %> </div>
+          <div> <%= render inline: parseText(article.text[0..200].gsub(/\s\w+\s*$/, '...')) %> </div>
         </div>
 
       <% end %>

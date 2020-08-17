@@ -9,8 +9,11 @@
         <tr>
           <th></th>
           <th>Title</th>
-          <!-- <th>Text</th> -->
-          <!-- <th></th> -->
+        </tr>
+
+        <tr>
+          <td class="new-article"><%= link_to 'New article', new_article_path %></td>
+          <td></td>
         </tr>
 
         <% @articles.each do |article| %>
@@ -23,10 +26,10 @@
             </td>
           </tr>
         <% end %>
-        <tr>
-          <td class="new-article"><%= link_to 'New article', new_article_path %></td>
-          <td></td>
-        </tr>
+        <!-- <tr> -->
+        <!--   <td class="new-article"><%= link_to 'New article', new_article_path %></td> -->
+        <!--   <td></td> -->
+        <!-- </tr> -->
       </table>
     </div>
 
